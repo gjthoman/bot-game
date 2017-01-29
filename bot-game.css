@@ -1,0 +1,70 @@
+h1 {
+  text-align: center; 
+  padding-bottom: .5em;
+}
+table, th, td {
+  border: 1px solid black;
+}
+table {
+  margin: 0 auto;
+}
+td {
+  width: 6vh;
+  height: 6vh;
+  position: relative;
+}
+
+p {
+  text-align: center;
+}
+
+ul {
+  padding-top: 2rem;
+}
+
+h3 {
+  text-align: center;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+button {
+  flex: 0 1 auto;
+  margin: 10px;
+  width: 40%;
+}
+.active {
+  background-color: rgba(0,0,0,0.25);
+}
+
+.goal {
+  background: #00a3e8;
+}
+.pit {
+  background: black;
+}
+.wall {
+  background: url('images/wall.jpg');
+  background-size: cover;
+}
+
+#robot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80%;
+  width: 80%;
+  background: orange;
+  transform: translate(-50%, -50%);
+}
+#robot:before {
+  content: "\27A4";
+  position: absolute;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+  transform: rotate(-90deg);
+}

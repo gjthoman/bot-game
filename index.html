@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Bot Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bot-game.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  </head>
+  <body class="container-fluid">
+    <h1>Bot Game</h1>
+    <p id="messages"></p>
+    <table id="Room"></table>
+    <br>
+    
+    <div class="row container-fluid">
+      <div class="buttons">
+        <button class="execute btn btn-success">Execute</button>
+        <button class="reset btn btn-warning">Reset</button>
+      </div>
+    </div>
+    <div class="row container-fluid">
+      <div class="col-xs-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Command Sequence</h3>
+          </div>
+          <div class="panel-body">
+            <ul id="CommandSequence" class="connectedSortable list-group">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Available Commands</h3>
+          </div>
+          <div class="panel-body">
+            <ul id="Commands" class="connectedSortable list-group"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="levels.js"></script>
+    <script src="bot-game.js"></script>
+  </body>
+</html>
