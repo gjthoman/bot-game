@@ -21,7 +21,6 @@ p {
 ul {
   padding-top: 2rem;
 }
-
 h3 {
   text-align: center;
 }
@@ -30,11 +29,30 @@ h3 {
   justify-content: center;
   padding: 10px;
 }
-
-button {
+.buttons button {
   flex: 0 1 auto;
   margin: 10px;
   width: 40%;
+}
+
+.list-group-item {
+  padding: 4px 15px;
+  font-size: 2em;
+  text-align: center;
+}
+
+ul:empty {
+  padding: 4em 0;
+}
+ul {
+  padding: 0 0 4em 0;
+  background: whitesmoke;
+}
+
+header {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 .active {
   background-color: rgba(0,0,0,0.25);

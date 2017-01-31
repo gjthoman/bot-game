@@ -6,7 +6,7 @@ var $grid = $('#Room');
 var $commandSequence = $('#CommandSequence');
 var numCommands;
 var currentCommand = 0;
-var currentLevel = 0;
+var currentLevel = 4;
 var animationSpeed = 1000;
 
 var Robot = {
@@ -27,6 +27,7 @@ destroyLevel = function() {
 }
 
 setupLevel = function(level) {
+  $('h1 span').html(currentLevel + 1);
   setupGrid(level.grid);
   placeGoal(level.goal.x, level.goal.y);
   placeRobot(level.robot.x, level.robot.y);
@@ -65,7 +66,8 @@ placePits = function(pits) {
 
 setupCommands = function(commands) {
   $.each(commands, function(key, command){
-    $('#Commands').append($('<li class="list-group-item" data-command="' + command.data + '">' + command.label + '</li>'));
+    var bc = BotCommands[command];
+    $('#Commands').append($('<li class="list-group-item" data-command="' + bc.data + '">' + bc.code + (bc.label ? bc.label : '')  + '</li>'));
   });
 }
 
@@ -81,6 +83,17 @@ setupListeners = function() {
     var level = levels[currentLevel];
     moveBotTo(level.robot.x, level.robot.y);
     rotateTo(level.direction);
+  });
+
+  $('button.prev').on('click', function() {
+    currentLevel --;
+    destroyLevel();
+    setupLevel(levels[currentLevel]);
+  });
+  $('button.next').on('click', function() {
+    currentLevel ++;
+    destroyLevel();
+    setupLevel(levels[currentLevel]);
   });
 }
 
